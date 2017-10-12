@@ -1,7 +1,7 @@
 USE employees;
 SELECT *
 FROM employees
-WHERE first_name ='Irena' OR first_name = 'Vidya' OR first_name = 'Maya';
+WHERE (first_name ='Irena' OR first_name = 'Vidya' OR first_name = 'Maya') AND gender = 'M';
 
 # SELECT * FROM employees WHERE last_name LIKE 'E%';
 # SELECT * FROM employees WHERE hire_date BETWEEN '1990-01-01' and '1999-12-31';
