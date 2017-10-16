@@ -17,3 +17,13 @@ SELECT first_name, last_name FROM employees where emp_no in (
   FROM dept_manager
   WHERE to_date > current_date()
 ) and gender = 'F';
+
+SELECT dept_name from departments where dept_no in (
+  SELECT dept_no
+  FROM dept_manager
+  where to_date>current_date() and emp_no IN (
+    SELECT emp_no
+    from employees
+    where gender = 'f'
+  )
+)
